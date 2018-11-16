@@ -19,6 +19,7 @@ class App extends Component {
           >
             Learn React
           </a>
+          <h3 className='fart'>This is a fart test</h3>
         </header>
       </div>
     );
