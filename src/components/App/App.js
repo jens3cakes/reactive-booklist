@@ -55,7 +55,7 @@ class App extends Component {
     this.props.loadBooks(mockBooks)
     axios.get ('/api/smoke')
     .then(response => {
-      console.log('smoke test:',response.data);
+      console.log('books:',response.data);
     })
     .catch(err=>{
       console.log(err)

@@ -6,6 +6,7 @@ module.exports = {
   development: {
     client: 'postgresql',
     connection: {
+      host:     process.env.POSTGRES_HOSTNAME,
       database: process.env.POSTGRES_DB,
       user:     process.env.POSTGRES_USER,
       password: process.env.POSTGRES_PASSWORD
