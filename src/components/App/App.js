@@ -1,6 +1,5 @@
 import React, { Component } from 'react';//where the states lives
 /* import logo from './logo.svg';*/
-
 import { connect } from 'react-redux';
 import './App.css';
 import BookListAppTitle from '../BookListAppTitle';
@@ -21,7 +20,6 @@ class App extends Component {
       currentId: _id + 1,
       books: [...books, newBook]
     })//[...]=spread array
-
   }
 
   render() {
@@ -33,33 +31,32 @@ class App extends Component {
       </div>
     );
   }
-  componentDidMount() {
+  componentDidMount() {//lifecycle method
     console.log('cdm firing');
     const mockBooks= [
-
-        {
-          _id: 1,
-          title: 'Talion: The Revenant from DB',
-          author: 'Michael A. Stackpole'
-        },
-        { 
-          _id: 2,
-          title: 'Ready Player One from DB',
-          author: 'Ernest Cline'
-        },
-        {
-          _id: 3,
-          title: 'Enders Game from DB',
-          author: 'Orson Scott Card'
-        }
-      ]
+      {
+        _id: 1,
+        title: 'Talion: The Revenant from DB',
+        author: 'Michael A. Stackpole'
+      },
+      { 
+        _id: 2,
+        title: 'Ready Player One from DB',
+        author: 'Ernest Cline'
+      },
+      {
+        _id: 3,
+        title: 'Enders Game from DB',
+        author: 'Orson Scott Card'
+      }
+    ]
     
     this.props.loadBooks(mockBooks)
-
-  }//lifecycle method
+  }
+    
+    
+  }
   
-}
-
 const mapStateToProps = (state) => {
   return {
     books: state
