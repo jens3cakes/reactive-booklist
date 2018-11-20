@@ -6,6 +6,7 @@ import BookListAppTitle from '../BookListAppTitle';
 import BookList from '../BookList';
 import AddBook from '../AddBook';
 import { loadBooks } from '../../actions/bookActions';
+import axios from 'axios';
 
 class App extends Component {
   constructor(props) {
@@ -52,6 +53,13 @@ class App extends Component {
     ]
     
     this.props.loadBooks(mockBooks)
+    axios.get ('/api/smoke')
+    .then(response => {
+      console.log('smoke test:',response.data);
+    })
+    .catch(err=>{
+      console.log(err)
+    })
   }
     
     
